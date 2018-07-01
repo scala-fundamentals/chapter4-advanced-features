@@ -10,8 +10,8 @@ Option[String => String]("Hello " + _) <*> None
 Option.empty[String => String] <*> Some("Apply")
 // res2: Option[String] = None
 
-def addOne: Int => Int = _ + 1
-def multByTwo: Int => Int = _ * 2
+val addOne: Int => Int = _ + 1
+val multByTwo: Int => Int = _ * 2
 Vector(addOne, multByTwo) <*> Vector(1, 2, 3)
 // res3: Vector[Int] = Vector(2, 3, 4, 2, 4, 6)
 
