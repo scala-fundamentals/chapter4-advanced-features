@@ -43,9 +43,10 @@ import scala.concurrent._
 import ExecutionContext.Implicits.global
 import duration.Duration
 
-val vecFut: List[Future[Int]] = List(Future(1), Future(2), Future(3))
-val futVec: Future[List[Int]] = vecFut.sequence
+val vecFut: Vector[Future[Int]] = Vector(Future(1), Future(2), Future(3))
+val futVec: Future[Vector[Int]] = vecFut.sequence
+
 Await.result(futVec, Duration.Inf)
-// res9: List[Int] = List(1, 2, 3)
+// res9: Vector[Int] = Vector(1, 2, 3)
 
 
